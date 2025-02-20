@@ -39,11 +39,11 @@ class KudosGiver:
             pass
         self.page.get_by_role("textbox", name='email').fill(self.EMAIL)
         print("---Logged in 1!!---")
-        self.page.get_by_role("button", id="desktop-login-button").click()
+        self.page.get_by_role("button", name=re.compile("Log in", re.IGNORECASE)).click()
         print("---Logged in 2!!---")
         self.page.get_by_role("textbox", name="password").fill(self.PASSWORD)
         print("---Logged in 3!!---")
-        self.page.get_by_role("button", id="desktop-login-button").click()
+        self.page.get_by_role("button", name=re.compile("Log in", re.IGNORECASE)).click()
         print("---Logged in!!---")
         self._run_with_retries(func=self._get_page_and_own_profile)
         
