@@ -34,7 +34,7 @@ class KudosGiver:
         """
         self.page.goto(os.path.join(BASE_URL, 'login'))
         try:
-            self.page.get_by_role("button", name="Reject").click(timeout=5000)
+            self.page.get_by_role("button", name="Reject").click(timeout=50000)
         except Exception as _:
             pass
         self.page.get_by_role("textbox", name='email').fill(self.EMAIL)
